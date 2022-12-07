@@ -11,5 +11,5 @@ namespace Exe4_028
         static void Main(string[] args)
         {
         }
-    }
+    } 
 }
