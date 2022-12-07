@@ -13,15 +13,25 @@ namespace Exe4_028
         int n;
         private readonly object arr;
         private int i;
-    }
 
-    class Node
-    {
-        public int Info;
-        public Node next;
-        public Node(int i, Node n)
+        //Fungsi/Method untuk menerima masukan
+        public void read()
         {
+            Console.Write("Masukkan banyaknya elemen pada Array : ");
+            //string s untuk terbaca
 
         }
+
+        class Node
+        {
+            public int Info;
+            public Node next;
+            public Node(int i, Node n)
+            {
+                Info = i;
+                next = n;
+            }
+        }
+
     }
-    }
+}
