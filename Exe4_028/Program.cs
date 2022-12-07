@@ -17,9 +17,33 @@ namespace Exe4_028
         //Fungsi/Method untuk menerima masukan
         public void read()
         {
-            Console.Write("Masukkan banyaknya elemen pada Array : ");
-            //string s untuk terbaca
-
+            //menerima angka untuk menentukan banyak data yang disimpan dalam array
+            while (true)
+            {
+                Console.Write("Masukkan banyaknya elemen pada Array : ");
+                //string s untuk terbaca
+                string s = Console.ReadLine();
+                //Parse untuk mengubah dalam bentuk desimal
+                n = Int32.Parse(s);
+                //pengambil keputusan
+                //jika kurang dari 46 maka akan dilanjutkan
+                if (n <= 46)
+                    break;
+                //jika lebih dari 46 maka akan muncul pernyataan maksimum elemen
+                else
+                    Console.WriteLine("\nArray maksimum elemen 46.\n");
+            }
+            Console.WriteLine("");
+            Console.WriteLine("-------------------");
+            Console.WriteLine("Masukkan elemen Array");
+            Console.WriteLine("");
+            //code memasukkan elemen array
+            for (int i = 0; i < dina.Length; i++)
+            {
+                Console.Write("<" + (i + 1) + "<");
+                string s1 = Console.ReadLine();
+                dina[i] = Int32.Parse(s1);
+            }
         }
 
         class Node
