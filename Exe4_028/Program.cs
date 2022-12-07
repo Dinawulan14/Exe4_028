@@ -100,7 +100,7 @@ namespace Exe4_028
                     //Traverse the list from begginning till end
                     for (tmp = top; tmp != null; tmp = tmp.next)
                     {
-                        Console.WriteLine(tmp.Info);
+                        Console.WriteLine(tmp.Info); 
 
                     }
                 }
