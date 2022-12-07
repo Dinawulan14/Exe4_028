@@ -81,7 +81,7 @@ namespace Exe4_028
 
                 fresh.next = top;
                 top = fresh;
-                Console.WriteLine("\n" + element + "pushed.");
+                Console.WriteLine("\n" + element + "pushed."); 
             }
         }
     }
