@@ -9,11 +9,10 @@ namespace Exe4_028
     class Program
     {
         //dimana 48 merupakan hasil dari 7+28+1+2x10-10
+        //didefinisikan array dengan ukuran maksimum 48
         private int[] dina = new int[46];
-        int n;
-        private readonly object arr;
-        private int i;
-
+        //variabel ukuran array
+        private decimal n;
         //Fungsi/Method untuk menerima masukan
         public void read()
         {
@@ -40,10 +39,24 @@ namespace Exe4_028
             //code memasukkan elemen array
             for (int i = 0; i < dina.Length; i++)
             {
-                Console.Write("<" + (i + 1) + "<");
+                Console.Write("<" + (i + 1) + ">");
                 string s1 = Console.ReadLine();
-                dina[i] = Int32.Parse(s1);
+                dina[i] = (int)decimal.Parse(s1);
             }
+        }
+        public void display()
+        {
+            //menampilkan array yang tersusun
+            Console.WriteLine("");
+            Console.WriteLine("---------------------");
+            Console.WriteLine("Element array yang telah terusun");
+            Console.WriteLine("----------------------------");
+            //menggunakan perulangan for akan mengulangi sampai perulangan tersebut sama dengan jumlah data
+            for (int dina = 0; dina < n; dina++)
+            {
+                Console.WriteLine((Convert.ToDecimal(dina)).ToString());
+            }
+            Console.WriteLine("");
         }
 
         class Node
@@ -100,8 +113,48 @@ namespace Exe4_028
                     //Traverse the list from begginning till end
                     for (tmp = top; tmp != null; tmp = tmp.next)
                     {
-                        Console.WriteLine(tmp.Info); 
-
+                        Console.WriteLine(tmp.Info);
+                    }
+                    Console.WriteLine();
+                }
+            }
+            static void Main(string[] args)
+            {
+                Stacks s = new Stacks();
+                while (true)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("\n***Stack Menu***\n");
+                    Console.WriteLine("1. Push.");
+                    Console.WriteLine("2. Pop.");
+                    Console.WriteLine("3. Display");
+                    Console.WriteLine("4. Exit");
+                    Console.Write("\nEnter your choice: ");
+                    string sInput = Console.ReadLine();
+                    char ch = Convert.ToChar(sInput == "" ? "0" : sInput);
+                    switch (ch)
+                    {
+                        case '1':
+                            Console.Write("\nEnter a number: ");
+                            decimal num = Convert.ToDecimal(Console.ReadLine());
+                            s.push(num);
+                            break;
+                        case '2':
+                            if (s.empty())
+                            {
+                                Console.WriteLine("\nStack Empty");
+                                break;
+                            }
+                            s.pop();
+                            break;
+                        case '3':
+                            s.display();
+                            break;
+                        case '4':
+                            return;
+                        default:
+                            Console.WriteLine("\nInvalid Choice");
+                            break;
                     }
                 }
             }
